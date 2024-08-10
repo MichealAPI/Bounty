@@ -4,10 +4,12 @@ import it.mikeslab.bounty.config.ConfigKey;
 import it.mikeslab.bounty.config.LanguageKey;
 import it.mikeslab.commons.LabCommons;
 import it.mikeslab.commons.api.config.Configurable;
+import lombok.Getter;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
 
+@Getter
 public final class Bounty extends JavaPlugin {
 
     private LabCommons labCommons;

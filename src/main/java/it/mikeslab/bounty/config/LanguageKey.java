@@ -15,7 +15,6 @@ public enum LanguageKey implements ConfigurableEnum {
     BOUNTY_CLAIMED_BROADCAST("bounty.claimed-broadcast", "<green><player> has claimed a bounty on <player> for <reward>"),
     BOUNTY_PLACED_BROADCAST("bounty.placed-broadcast", "<green><player> has placed a bounty on <player> for <reward>");
 
-
     private final String path;
     private final Object defaultValue;
 
