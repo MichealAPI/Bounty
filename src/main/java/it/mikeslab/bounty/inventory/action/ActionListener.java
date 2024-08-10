@@ -1,6 +1,7 @@
 package it.mikeslab.bounty.inventory.action;
 
-import it.mikeslab.bounty.Bounty;
+import it.mikeslab.bounty.BountyPlugin;
+import it.mikeslab.bounty.inventory.pojo.Bounty;
 import it.mikeslab.bounty.inventory.pojo.Condition;
 import it.mikeslab.commons.api.inventory.CustomInventory;
 import it.mikeslab.commons.api.inventory.pojo.action.GuiAction;
@@ -20,7 +21,7 @@ public interface ActionListener extends CustomInventory {
      * @param prefix the prefix of the action
      * @param action the action to inject
      */
-     default void injectAction(Bounty instance, String prefix, GuiAction action) {
+     default void injectAction(BountyPlugin instance, String prefix, GuiAction action) {
 
         instance.getActionHandler().injectAction(
                 this.getId(),
@@ -36,7 +37,7 @@ public interface ActionListener extends CustomInventory {
      * @param action the action to inject
      * @param condition the condition to check before executing the action
      */
-    default void injectAction(Bounty instance, String prefix, GuiAction action, Supplier<Condition> condition) {
+    default void injectAction(BountyPlugin instance, String prefix, GuiAction action, Supplier<Condition> condition) {
 
          GuiAction mergedAction = new GuiAction((event, args) -> {
 
@@ -59,7 +60,7 @@ public interface ActionListener extends CustomInventory {
      * @param value the value to set, if present. Defaults to args
      * @param openFallback whether to open the fallback gui after the selection
      */
-    default GuiAction handleSelection(Bounty instance, Optional<Supplier<String>> value, boolean openFallback, Optional<Supplier<Condition>> condition) {
+    default GuiAction handleSelection(BountyPlugin instance, Optional<Supplier<String>> value, boolean openFallback, Optional<Supplier<Condition>> condition) {
         // todo double condition check? Here and in the inject action method
 
         return new GuiAction((event, args) -> {
@@ -88,10 +89,9 @@ public interface ActionListener extends CustomInventory {
             Player player = event.getWhoClicked();
             UUID playerUUID = player.getUniqueId();
 
-            // todo
-            //Identity identity = instance
-            //        .getSetupCacheHandler()
-            //        .getIdentity(playerUUID);
+            Bounty identity = instance
+                    .getSetupCacheHandler()
+                    .getCachedBounty(playerUUID);
 
             if (identity == null) {
                 LogUtils.warn(
@@ -136,7 +136,7 @@ public interface ActionListener extends CustomInventory {
      * Opens the fallback gui
      * @param player the player to open the gui for
      */
-    default void openFallbackGui(Bounty instance, Player player) {
+    default void openFallbackGui(BountyPlugin instance, Player player) {
 
         String fallbackIdentifier = instance.getGuiConfigRegistrar().getFallbackGuiIdentifier();
 

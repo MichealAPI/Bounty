@@ -12,7 +12,8 @@ public enum ConfigKey implements ConfigurableEnum {
     BOUNTY_EXPIRATION_WARNING("bounty.expiration-warning", 86400),
     BOUNTY_PLAYER_LIMIT("bounty.player-limit", 5),
     BOUNTY_REWARD_MAXIMUM("bounty.reward-limit", 1000),
-    BOUNTY_REWARD_MINIMUM("bounty.reward-minimum", 100);
+    BOUNTY_REWARD_MINIMUM("bounty.reward-minimum", 100),
+    ANIMATION_INTERVAL("animation.interval", 20);
 
     private final String path;
     private final Object defaultValue;

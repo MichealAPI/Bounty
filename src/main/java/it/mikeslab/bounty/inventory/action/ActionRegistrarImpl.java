@@ -4,7 +4,7 @@ package it.mikeslab.bounty.inventory.action;
 
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.Multimap;
-import it.mikeslab.bounty.Bounty;
+import it.mikeslab.bounty.BountyPlugin;
 import it.mikeslab.bounty.util.SetupMap;
 import it.mikeslab.commons.api.component.ComponentsUtil;
 import it.mikeslab.commons.api.inventory.CustomInventory;
@@ -23,7 +23,7 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class ActionRegistrarImpl implements ActionRegistrar {
 
-    private final Bounty instance;
+    private final BountyPlugin instance;
 
     @Override
     public Multimap<String, GuiAction> loadActions() {

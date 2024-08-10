@@ -5,4 +5,4 @@ bounty:
   placed-broadcast: "<green><player> has placed a bounty on <player> for <reward>"
   expired-message: "<red>Your bounty has expired!"
   expiration-warning-message: "<red>Your bounty will expire in 24 hours!"
-
+  value-out-of-range: "<red>Value out of range <min> to <max>!"

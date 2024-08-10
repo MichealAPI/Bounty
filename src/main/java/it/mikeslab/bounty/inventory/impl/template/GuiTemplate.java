@@ -1,6 +1,6 @@
 package it.mikeslab.bounty.inventory.impl.template;
 
-import it.mikeslab.bounty.Bounty;
+import it.mikeslab.bounty.BountyPlugin;
 import it.mikeslab.bounty.config.ConfigKey;
 import it.mikeslab.commons.api.inventory.CustomInventory;
 import it.mikeslab.commons.api.inventory.config.GuiConfig;
@@ -17,9 +17,9 @@ public abstract class GuiTemplate implements CustomInventory {
 
     @Setter
     private GuiContext guiContext;
-    private Bounty instance;
+    private BountyPlugin instance;
 
-    public GuiTemplate(final Bounty instance, GuiContext context) {
+    public GuiTemplate(final BountyPlugin instance, GuiContext context) {
         this.instance = instance;
         this.guiContext = context;
 

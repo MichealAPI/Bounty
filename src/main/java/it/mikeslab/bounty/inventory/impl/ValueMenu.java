@@ -1,6 +1,6 @@
 package it.mikeslab.bounty.inventory.impl;
 
-import it.mikeslab.bounty.Bounty;
+import it.mikeslab.bounty.BountyPlugin;
 import it.mikeslab.bounty.config.LanguageKey;
 import it.mikeslab.bounty.inventory.action.ActionListener;
 import it.mikeslab.bounty.inventory.impl.template.GuiTemplate;
@@ -38,7 +38,7 @@ public class ValueMenu extends GuiTemplate implements ActionListener {
     private final int min, max;
 
 
-    public ValueMenu(Bounty instance, GuiContext guiContext, ValueMenuContext context) {
+    public ValueMenu(BountyPlugin instance, GuiContext guiContext, ValueMenuContext context) {
         super(instance, guiContext);
 
         this.min = context.getMin();

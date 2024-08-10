@@ -1,10 +1,9 @@
 package it.mikeslab.bounty.util;
 
-import it.mikeslab.bounty.Bounty;
+import it.mikeslab.bounty.BountyPlugin;
 import it.mikeslab.commons.api.inventory.CustomGui;
 import it.mikeslab.commons.api.inventory.CustomInventory;
 import it.mikeslab.commons.api.inventory.helper.InventoryMap;
-import it.mikeslab.identity.IdentityPlugin;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -18,10 +17,10 @@ public class SetupMap extends InventoryMap {
 
     private static final int EXPIRATION_TIME = 1000; // seconds = n/1000
 
-    private final Bounty instance;
+    private final BountyPlugin instance;
     private final Map<UUID, Map<String, Long>> lastAccessMap = new HashMap<>();
 
-    public SetupMap(Bounty instance) {
+    public SetupMap(BountyPlugin instance) {
         this.instance = instance;
     }
 

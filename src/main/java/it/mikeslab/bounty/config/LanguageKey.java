@@ -13,7 +13,8 @@ public enum LanguageKey implements ConfigurableEnum {
     BOUNTY_PLACED_MESSAGE("bounty.placed-message", "<green>You have placed a bounty on <player> for <reward>"),
     BOUNTY_CLAIMED_MESSAGE("bounty.claimed-message", "<green>You have claimed a bounty on <player> for <reward>"),
     BOUNTY_CLAIMED_BROADCAST("bounty.claimed-broadcast", "<green><player> has claimed a bounty on <player> for <reward>"),
-    BOUNTY_PLACED_BROADCAST("bounty.placed-broadcast", "<green><player> has placed a bounty on <player> for <reward>");
+    BOUNTY_PLACED_BROADCAST("bounty.placed-broadcast", "<green><player> has placed a bounty on <player> for <reward>"),
+    VALUE_OUT_OF_RANGE("value-out-of-range", "<red>Value out of range <min> to <max>!");
 
     private final String path;
     private final Object defaultValue;

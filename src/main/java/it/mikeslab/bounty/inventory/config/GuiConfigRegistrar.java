@@ -1,6 +1,6 @@
 package it.mikeslab.bounty.inventory.config;
 
-import it.mikeslab.bounty.Bounty;
+import it.mikeslab.bounty.BountyPlugin;
 import it.mikeslab.bounty.inventory.impl.MainMenu;
 import it.mikeslab.bounty.inventory.impl.SelectorMenu;
 import it.mikeslab.bounty.inventory.impl.ValueMenu;
@@ -22,7 +22,7 @@ import java.util.logging.Level;
 
 public class GuiConfigRegistrar {
 
-    private final Bounty instance;
+    private final BountyPlugin instance;
     private final ConfigurationSection section;
 
     @Getter
@@ -44,7 +44,7 @@ public class GuiConfigRegistrar {
     private String inventoryKeyId; // Internal use, rapid switching between keys
 
 
-    public GuiConfigRegistrar(Bounty instance, String section) {
+    public GuiConfigRegistrar(BountyPlugin instance, String section) {
         this.instance = instance;
         this.section = instance.getCustomConfig()
                 .getConfiguration()
