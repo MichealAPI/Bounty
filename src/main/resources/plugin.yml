@@ -1,0 +1,7 @@
+name: Bounty
+version: '1.0'
+main: it.mikeslab.bounty.Bounty
+api-version: '1.21'
+authors: [ Michele ]
+description: A simple Bounty handler plug-in
+website: https://mikeslab.it
